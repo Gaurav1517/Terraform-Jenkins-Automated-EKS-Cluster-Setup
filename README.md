@@ -1,10 +1,13 @@
 # Deploying an EKS Cluster with Terraform and Jenkins
 
 ### Architecture
-![]()
+![flow-archit](Snap/flow-archit.png)
 
 ### Tools used: Terraform, Jenkins, AWS EKS, AWS CLI, VsCode, AWS IAM, AWS EC2, AWS S3
 
+<a href="https://code.visualstudio.com/">
+  <img src="https://www.svgrepo.com/show/452129/vs-code.svg" alt="VS Code" width="100">
+</a>
 <a href="https://aws.amazon.com">
   <img src="https://www.svgrepo.com/show/376356/aws.svg" alt="AWS" width="100">
 </a>
@@ -25,10 +28,6 @@
 </a>
 <a href="https://www.svgrepo.com/show/373924/nginx.svg">
   <img src="https://www.svgrepo.com/show/373924/nginx.svg" alt="NGINX" width="100">
-</a>
-
-<a href="https://www.jenkins.io">
-  <img src="https://get.jenkins.io/art/jenkins-logo/logo.svg" alt="Jenkins" width="100">
 </a>
 
 <a href="https://aws.amazon.com/ec2/">
@@ -55,9 +54,7 @@
   <img src="https://icon.icepanel.io/AWS/svg/Storage/Simple-Storage-Service.svg" alt="S3" width="100">
 </a>
 
-<a href="https://code.visualstudio.com/">
-  <img src="https://www.svgrepo.com/show/452129/vs-code.svg" alt="VS Code" width="100">
-</a>
+---
 
 ## Overview
 This project demonstrates how to deploy an Amazon EKS cluster using Terraform and Jenkins. The workflow includes creating the necessary infrastructure, configuring a CI/CD pipeline, and deploying a sample application to the EKS cluster.
@@ -89,8 +86,7 @@ Ensure the following tools and configurations are in place before starting:
 - Add and commit the Jenkins setup code and Terraform code for EKS cluster deployment:
   ```bash
   git add .
-  git commit -m "jenkins-server-code"
-  git commit -m "eks-cluster-code"
+  git commit -m "push code to github"
   git push origin -u feature
   ```
 - Create a pull request from the `feature` branch to the `main` branch and merge it.
@@ -246,13 +242,13 @@ To automatically trigger builds on GitHub updates:
 ## Conclusion
 This setup ensures a robust CI/CD pipeline for deploying and managing EKS clusters and Kubernetes applications using Terraform and Jenkins. Use Jenkins parameters to easily apply or destroy the infrastructure.
 
-Ref:
-ami-data source filter - https://registry.terraform.io/providers/hashicorp/aws/4.53.0/docs/data-sources/ami.html
-aws-eks-module - https://registry.terraform.io/modules/terraform-aws-modules/eks/aws/latest
-aws-ec2-module - https://registry.terraform.io/modules/terraform-aws-modules/ec2-instance/aws/latest
-aws-vpc-module - https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest
-security-group-module - https://registry.terraform.io/modules/terraform-aws-modules/security-group/aws/latest
-Jenkins-install - https://www.jenkins.io/doc/book/installing/linux/
-kubectl install - https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/ 
+## References
 
+- [AMI Data Source Filter](https://registry.terraform.io/providers/hashicorp/aws/4.53.0/docs/data-sources/ami.html)
+- [AWS EKS Module](https://registry.terraform.io/modules/terraform-aws-modules/eks/aws/latest)
+- [AWS EC2 Module](https://registry.terraform.io/modules/terraform-aws-modules/ec2-instance/aws/latest)
+- [AWS VPC Module](https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest)
+- [Security Group Module](https://registry.terraform.io/modules/terraform-aws-modules/security-group/aws/latest)
+- [Jenkins Installation](https://www.jenkins.io/doc/book/installing/linux/)
+- [kubectl Installation](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
 ```
